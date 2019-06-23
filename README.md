@@ -1,4 +1,4 @@
-# Decagon: Representation Learning on Multimodal Graphs
+﻿# Decagon: Representation Learning on Multimodal Graphs
 
 #### Author: [Marinka Zitnik](http://stanford.edu/~marinka) (marinka@cs.stanford.edu)
 
@@ -41,6 +41,12 @@ The full polypharmacy dataset (described in the paper) is available on the
 [project website](http://snap.stanford.edu/decagon). To run the code on the full dataset first download all data files
 from the [project website](http://snap.stanford.edu/decagon). The polypharmacy dataset is already preprocessed and ready to use. 
 After cloning the project, replace the synthetic example in `main.py` with the polypharmacy dataset and run the model.  
+
+### Dataset
+
+You can Download the real dataset on the [project website](http://snap.stanford.edu/decagon). Creat a data folder. put the data
+on this folder and unzip the data. There should be six .csv files on the data folder. 
+
 
 ## Citing
 
