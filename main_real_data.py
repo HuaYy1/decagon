@@ -125,14 +125,18 @@ se2class, se2name_class = load_categories(os.path.join('data', 'bio-decagon-effe
 unique_drugs = set(list(chain.from_iterable([combo2stitch[stitch] for stitch in combo2stitch])))
 
 val_test_size = 0.05
-n_genes = len(node2idx)
-n_drugs = len(unique_drugs)
-n_drugdrug_rel_types = 3
+n_genes = len(node2idx)  # 19081
+n_drugs = len(stitch2proteins)  # 1774
+n_drugdrug_rel_types = len(se2name)  # 1317
 
-#gene_net = nx.planted_partition_graph(50, 10, 0.2, 0.05, seed=42)
+# gene_net is a protein-protein interaction networks. We have used PPI data to construct this network.
+# The adjacency matrix is a (19081*19081) matrix.
 gene_net = net
 gene_adj = nx.adjacency_matrix(gene_net)
 gene_degrees = np.array(gene_adj.sum(axis=0)).squeeze()
+
+
+gene_drug = np.zeros(n_genes * n_drugs)
 
 gene_drug_adj = sp.csr_matrix((10 * np.random.randn(n_genes, n_drugs) > 15).astype(int))
 drug_gene_adj = gene_drug_adj.transpose(copy=True)
