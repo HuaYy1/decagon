@@ -6,7 +6,7 @@ def get_sparse_mat(a2b, a2idx, b2idx):
     n = len(a2idx)
     m = len(b2idx)
     assoc = np.zeros((n, m))
-    for a, b_assoc in a2b.iteritems():
+    for a, b_assoc in a2b.items():
         if a not in a2idx:
             continue
         for b in b_assoc:
